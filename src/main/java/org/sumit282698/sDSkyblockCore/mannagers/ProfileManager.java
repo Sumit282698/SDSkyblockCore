@@ -1,4 +1,6 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.mannagers;
+
+import org.sumit282698.sDSkyblockCore.objects.PlayerProfile;
 
 import java.util.HashMap;
 import java.util.UUID;

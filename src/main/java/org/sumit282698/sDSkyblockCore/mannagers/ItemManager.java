@@ -1,4 +1,4 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.mannagers;
 
 import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;

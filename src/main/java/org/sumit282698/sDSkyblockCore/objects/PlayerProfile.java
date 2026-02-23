@@ -1,4 +1,4 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.objects;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.sumit282698.sDSkyblockCore.SDSkyblockCore;
 
 import java.util.ArrayList;
 import java.util.List;

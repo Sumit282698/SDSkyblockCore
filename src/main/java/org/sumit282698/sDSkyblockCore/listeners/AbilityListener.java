@@ -1,4 +1,4 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -8,6 +8,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.sumit282698.sDSkyblockCore.objects.PlayerProfile;
+import org.sumit282698.sDSkyblockCore.SDSkyblockCore;
 
 public class AbilityListener implements Listener {
 

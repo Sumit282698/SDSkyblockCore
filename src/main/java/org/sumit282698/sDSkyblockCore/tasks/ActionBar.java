@@ -1,4 +1,4 @@
-package org.sumit282698.sDSkyblockCore;
+package org.sumit282698.sDSkyblockCore.tasks;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -6,6 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.sumit282698.sDSkyblockCore.objects.PlayerProfile;
+import org.sumit282698.sDSkyblockCore.SDSkyblockCore;
 
 public class ActionBar extends BukkitRunnable {
 

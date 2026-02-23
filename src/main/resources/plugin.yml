@@ -1,0 +1,9 @@
+name: SDSkyblockCore
+version: '1.0-SNAPSHOT'
+main: org.sumit282698.sDSkyblockCore.SDSkyblockCore
+api-version: '1.21'
+
+commands:
+  sdstats: # <--- THIS MUST MATCH getCommand("sbstats") EXACTLY
+    description: Opens your Skyblock stats menu.
+    aliases: [stats, profile]

@@ -11,6 +11,7 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         // Change this to use your new load method
         SDSkyblockCore.getProfileManager().loadProfile(event.getPlayer().getUniqueId());
+        SDSkyblockCore.getProfileManager().createProfile(event.getPlayer().getUniqueId());
     }
 
     @EventHandler

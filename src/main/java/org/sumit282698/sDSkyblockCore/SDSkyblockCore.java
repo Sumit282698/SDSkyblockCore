@@ -29,7 +29,6 @@ public final class SDSkyblockCore extends JavaPlugin {
         itemManager = new ItemManager();
 
         //tasks
-        getCommand("sbadmin").setExecutor(new Items());
         new ActionBar().runTaskTimer(this, 0L, 2L);
         //My Start Message
         getLogger().info("SDSkyblock Core Started XD");

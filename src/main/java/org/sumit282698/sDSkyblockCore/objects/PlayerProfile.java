@@ -1,5 +1,7 @@
 package org.sumit282698.sDSkyblockCore.objects;
 
+import org.bukkit.entity.Player;
+
 import java.util.UUID;
 
 public class PlayerProfile {
@@ -43,5 +45,18 @@ public class PlayerProfile {
     }
     public void setMaxIntelligence(double maxIntelligence) {
         this.maxIntelligence = maxIntelligence;
+    }
+
+    public void updateMinecraftHealth(Player player) {
+        // This makes 100 Skyblock Health = 20 Minecraft Health
+        // Or you can use: player.setHealthScale(40.0); to show more hearts!
+        double ratio = this.health / this.maxHealth;
+        double mcHealth = 20.0 * ratio;
+
+        // Safety check to prevent crashing if health is 0 or too high
+        if (mcHealth > 20) mcHealth = 20;
+        if (mcHealth < 0) mcHealth = 0;
+
+        player.setHealth(mcHealth);
     }
 }

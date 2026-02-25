@@ -8,10 +8,10 @@ public class MenuListener {
     public void onMenuClick(InventoryClickEvent event) {
         String title = event.getView().getTitle();
 
-        if (title.equals("Skyblock Profile")) {
+        if (title.equals("Your Skyblock Stats")) {
             event.setCancelled(true);
         }
-        else if (title.equals("Admin Item Browser")) {
+        else if (title.equals("Item Browser")) {
             event.setCancelled(true); // Don't let them move the item
             if (event.getCurrentItem() != null) {
                 // Give the player a copy of the item they clicked

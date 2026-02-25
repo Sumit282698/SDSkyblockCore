@@ -60,7 +60,7 @@ public class Items implements CommandExecutor {
     }
 
     private void openItemBrowser(Player player) {
-        org.bukkit.inventory.Inventory inv = org.bukkit.Bukkit.createInventory(null, 54, "Admin Item Browser");
+        org.bukkit.inventory.Inventory inv = org.bukkit.Bukkit.createInventory(null, 54, "Item Browser");
         for (ItemStack item : SDSkyblockCore.getItemManager().getCustomItems().values()) {
             inv.addItem(item);
         }

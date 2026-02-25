@@ -33,6 +33,7 @@ public class skills implements CommandExecutor {
         List<String> lore = new ArrayList<>();
         lore.add(ChatColor.GRAY + "Gives you a better chance at");
         lore.add(ChatColor.GRAY + "fighting strong monsters");
+        lore.add(ChatColor.GRAY + " ");
         lore.add(ChatColor.RED + "Health " + ChatColor.WHITE + (int)profile.getMaxHealth());
         lore.add(ChatColor.GREEN + "Defence " + ChatColor.WHITE + (int)profile.getDefense());
         lore.add(ChatColor.RED + "Strength " + ChatColor.WHITE + (int)profile.getStrength());
@@ -70,9 +71,9 @@ public class skills implements CommandExecutor {
 
 
         // Item Location
-        gui.setItem(14, combat_stats);
-        gui.setItem(15, gathering_stats);
-        gui.setItem(22, misc_stats);
+        gui.setItem(15, combat_stats);
+        gui.setItem(16, gathering_stats);
+        gui.setItem(24, misc_stats);
         player.openInventory(gui);
         return true;
     }

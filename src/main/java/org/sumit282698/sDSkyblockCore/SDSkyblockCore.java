@@ -30,7 +30,7 @@ public final class SDSkyblockCore extends JavaPlugin {
         //Events
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new AbilityListener(), this);
-        getServer().getPluginManager().registerEvents((Listener) new MenuListener(), this);
+        getServer().getPluginManager().registerEvents(new MenuListener(), this);
 
         //idk why but what it is, it is
         profileManager = new ProfileManager();

@@ -1,58 +1,80 @@
 package org.sumit282698.sDSkyblockCore;
 
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.sumit282698.sDSkyblockCore.commands.Items;
-import org.sumit282698.sDSkyblockCore.commands.skills;
-import org.sumit282698.sDSkyblockCore.commands.skillsadder;
-import org.sumit282698.sDSkyblockCore.listeners.AbilityListener;
-import org.sumit282698.sDSkyblockCore.listeners.JoinListener;
-import org.sumit282698.sDSkyblockCore.mannagers.ItemManager;
-import org.sumit282698.sDSkyblockCore.mannagers.ProfileManager;
-import org.sumit282698.sDSkyblockCore.tasks.ActionBar;
-import org.sumit282698.sDSkyblockCore.listeners.MenuListener;
+import org.sumit282698.sDSkyblockCore.api.PlayerSkills;
+import org.sumit282698.sDSkyblockCore.commands.GetItemCommand;
+import org.sumit282698.sDSkyblockCore.database.Database;
+import org.sumit282698.sDSkyblockCore.listeners.PlayerConnectionListener;
+import org.sumit282698.sDSkyblockCore.managers.ItemManager;
+import org.sumit282698.sDSkyblockCore.managers.ProfileManager;
+import org.sumit282698.sDSkyblockCore.tasks.StatsTask;
+import org.sumit282698.sDSkyblockCore.listeners.CombatListener;
 
-public final class SDSkyblockCore extends JavaPlugin {
-    private static ProfileManager profileManager;
-    private static ItemManager itemManager;
+import java.util.UUID;
+
+public class SDSkyblockCore extends JavaPlugin {
     private static SDSkyblockCore instance;
-
+    private ProfileManager profileManager;
+    private ItemManager itemManager;
+    private Database database;
 
     @Override
     public void onEnable() {
-        //Commands
         instance = this;
-        getCommand("sdstats").setExecutor(new skills());
-        getCommand("sditems").setExecutor(new Items());
-        getCommand("sdskills").setExecutor(new skillsadder());
 
-        //Events
-        getServer().getPluginManager().registerEvents(new JoinListener(), this);
-        getServer().getPluginManager().registerEvents(new AbilityListener(), this);
-        getServer().getPluginManager().registerEvents(new MenuListener(), this);
+        // Checking if folder Exists XD.
+        if (!getDataFolder().exists()) getDataFolder().mkdirs();
+        //Managing if no profile
+        this.profileManager = new ProfileManager();
+        this.database = new Database();
+        // items manager
+        this.itemManager = new ItemManager();
+        this.itemManager.loadItems();
+        this.profileManager = new ProfileManager();
 
-        //idk why but what it is, it is
-        profileManager = new ProfileManager();
-        itemManager = new ItemManager();
+        // commands
+        getCommand("sbget").setExecutor(new GetItemCommand());
 
-        //tasks
-        new ActionBar().runTaskTimer(this, 0L, 2L);
-        //My Start Message
-        getLogger().info("SDSkyblock Core Started XD");
+        // loading Profile
+        saveDefaultConfig();
+        getLogger().info("Data Layer Loaded!");
+
+        // loading For Data Basse
+
+        try {
+            this.database.connect();
+        } catch (java.sql.SQLException e) {
+            getLogger().severe("Could not connect to database! Disabling...");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        this.profileManager = new ProfileManager();
+        getLogger().info("Database connected successfully!");
+        // Player Join And Leave Evnts
+        getServer().getPluginManager().registerEvents(new PlayerConnectionListener(this), this);
+        getLogger().info("Player Connection");
+// Action Bar
+        new StatsTask(this).runTaskTimer(this, 20L, 20L);
+        getLogger().info("Step 4: Stats Task started!");
+        // COmbat
+        getServer().getPluginManager().registerEvents(new CombatListener(), this);
+
     }
-    public static SDSkyblockCore getInstance() {
-        return instance;
+
+    // main Functions
+// player load
+    public static PlayerSkills getSPlayer(UUID uuid) {
+        return getInstance().getProfileManager().getProfile(uuid);
     }
-    public static ProfileManager getProfileManager() {
-        return profileManager;
-    }
-    public static ItemManager getItemManager() {
+    // item loader
+    public ItemManager getItemManager() {
         return itemManager;
     }
 
-    @Override
-    public void onDisable() {
-        getLogger().info("SDSkyBlock Core shutting down...");
-    }
-} 
+    // db load
+    public Database getDatabase() { return database; }
+    // other loaders XD
+    public static SDSkyblockCore getInstance() { return instance; }
+    public ProfileManager getProfileManager() { return profileManager; }
+}

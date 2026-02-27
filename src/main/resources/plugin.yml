@@ -4,12 +4,6 @@ main: org.sumit282698.sDSkyblockCore.SDSkyblockCore
 api-version: '1.21'
 
 commands:
-  sdstats:
-    description: Opens your Skyblock stats menu.
-    aliases: [stats, profile]
-  sdskills:
-    description: Modify player skyblock stats.
-    permission: skyblock.admin
-  sditems:
-    description: Opens your Items Menu.
-    permission: skyblock.admin
+  sbget:
+    description: Get a custom Skyblock item
+    usage: /<command> <id>

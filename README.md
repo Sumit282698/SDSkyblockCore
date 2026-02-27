@@ -12,4 +12,11 @@
     <li>Paper (as its is tested)</li>
   </ul>
   <p>This plugin is only tested on java 1.21.11 so i cant say it will work on any other thing</p>
+  <h2>Features</h2>
+  <ul>
+    <li>Custom Items & Some Abilities</li>
+    <li>Stats</li>
+    <li>Uses Data Base to store players data on join and leave</li>
+  </ul>
+  
 </html>

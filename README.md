@@ -18,5 +18,10 @@
     <li>Stats</li>
     <li>Uses Data Base to store players data on join and leave</li>
   </ul>
-  
+  <h2>Commands</h2>
+  <ul>
+    <li>/sbget (item_id) </li>
+    <li>/sditems</li>
+    <li>/sdskills (add/remove) (skill_type) valueinint </li>
+  </ul>
 </html>

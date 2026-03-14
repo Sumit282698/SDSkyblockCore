@@ -22,6 +22,6 @@
   <ul>
     <li>/sbget (item_id) </li>
     <li>/sditems</li>
-    <li>/sdskills (add/remove) (skill_type) valueinint </li>
+    <li>/sdskills (add/remove) (skill_type) (int) </li>
   </ul>
 </html>

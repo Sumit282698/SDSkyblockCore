@@ -5,7 +5,6 @@
   
   [![GitHub Release](https://img.shields.io/github/v/release/sumit282698/SDSkyblockCore)](https://github.com/sumit282698/SDSkyblockCore/releases/latest)
   [![Github All Releases](https://img.shields.io/github/downloads/sumit282698/SDSkyblockCore/total.svg)](https://github.com/sumit282698/SDSkyblockCore/releases)
-  ![Visitor Count](https://visitor-counter-badge.vercel.app)
 
 
   

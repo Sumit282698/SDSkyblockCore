@@ -3,7 +3,7 @@
 <h1>SDSkyblockCore</h1>
   <p>This is a Plugin based on hypixel skyblock in this plugin u can make server like hypixel skyblock </p>
   
-  [![GitHub Release](https://img.shields.io/github/v/release/sumit282698/SDSkyblockCore?style=flat-square)](https://github.com/sumit282698/SDSkyblockCore/releases/latest)
+  [![GitHub Release](https://img.shields.io/github/v/release/sumit282698/SDSkyblockCore)](https://github.com/sumit282698/SDSkyblockCore/releases/latest)
   [![Github All Releases](https://img.shields.io/github/downloads/sumit282698/SDSkyblockCore/total.svg)](https://github.com/sumit282698/SDSkyblockCore/releases)
 
 
